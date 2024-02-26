@@ -1,7 +1,7 @@
 import React from 'react'
-
-export const UpadteTransformationPage = () => {
+const UpadteTransformationPage = () => {
   return (
     <div>UpadteTransformation</div>
   )
 }
+export default UpadteTransformationPage 
