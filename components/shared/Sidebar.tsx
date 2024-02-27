@@ -21,7 +21,7 @@ export const Sidebar = () => {
               {navLinks.slice(0,6).map((link)=>{
                 const isActive = link.route ===pathName
                 return(
-                  <li className={`sidebar-nav_element group 
+                  <li key ={link.label} className={`sidebar-nav_element group 
                   ${isActive ?'bg-black text-white':'text-black-700'} `}>
                      <Link className='sidebar-link' href={link.route}>
                      <Image src={link.icon} alt="logo" 
@@ -38,7 +38,7 @@ export const Sidebar = () => {
             {navLinks.slice(6).map((link)=>{
                 const isActive = link.route ===pathName
                 return(
-                  <li keu ={link.label} className={`sidebar-nav_element group 
+                  <li key ={link.label} className={`sidebar-nav_element group 
                   ${isActive ?'bg-black text-white':'text-black-700'} `}>
                      <Link className='sidebar-link' href={link.route}>
                      <Image src={link.icon} alt="logo" 
