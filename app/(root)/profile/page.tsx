@@ -5,4 +5,4 @@ export const Credits = () => {
     <div>page</div>
   )
 }
-export default Profile;
+export default Credits;
