@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Profile = () => {
+export const Credits = () => {
   return (
     <div>page</div>
   )
