@@ -44,24 +44,20 @@ export const MobileNav = () => {
                             height={23}
                             className='cursor-pointer'
                         />
-                        <ul className="header-nav_elements">
-              {navLinks.slice(0,6).map((link)=>{
-                const isActive = link.route ===pathName
-                return(
-                  <li key ={link.label} className={`sidebar-nav_element group 
-                  ${isActive ?'bg-black text-white':'text-black-700'} `}>
-                     <Link className='sidebar-link' href={link.route}>
-                     <Image src={link.icon} alt="logo" 
-                      width={24} height={24} className={`${isActive && 'brightness-200'}`} />
-
-                        {link.label}
-                      </Link>
-                  </li>
-                )
-          } )}
-          
-          
-            </ul>
+                       <ul className="header-nav_elements">
+  {navLinks.slice(0, 6).map((link) => {
+    const isActive = link.route === pathName;
+    return (
+      <li key={link.label} className={`sidebar-nav_element group ${isActive ? 'bg-black text-white' : 'text-black-700'}`}>
+        <Link className='sidebar-link' href={link.route}>
+          <Image src={link.icon} alt="logo" width={24} height={24} className={`${isActive && 'brightness-200'}`} />
+          {link.label}
+        </Link>
+      </li>
+    );
+  })}
+          </ul>
+                
             
             
           

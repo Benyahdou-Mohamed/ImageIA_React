@@ -16,52 +16,44 @@ export const Sidebar = () => {
           <Image src="assets/images/logo-text.svg" alt="logo" width={180} height={28} />
         </Link>
         <nav className="sidebar-nav">
-           <SignedIn>
-            <ul className="sidebar-nav_elements">
-              {navLinks.slice(0,6).map((link)=>{
-                const isActive = link.route ===pathName
-                return(
-                  <li key ={link.label} className={`sidebar-nav_element group 
-                  ${isActive ?'bg-black text-white':'text-black-700'} `}>
-                     <Link className='sidebar-link' href={link.route}>
-                     <Image src={link.icon} alt="logo" 
-                      width={24} height={24} className={`${isActive && 'brightness-200'}`} />
+  <SignedIn>
+    <ul className="sidebar-nav_elements">
+      {navLinks.slice(0,6).map((link, index) => {
+        const isActive = link.route === pathName;
+        return (
+          <li key={index} className={`sidebar-nav_element group ${isActive ? 'bg-black text-white' : 'text-black-700'}`}>
+            <Link className='sidebar-link' href={link.route}>
+              <Image src={link.icon} alt="logo" width={24} height={24} className={`${isActive && 'brightness-200'}`} />
+              {link.label}
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+    <ul className="sidebar-nav_elements">
+      {navLinks.slice(6).map((link, index) => {
+        const isActive = link.route === pathName;
+        return (
+          <li key={index} className={`sidebar-nav_element group ${isActive ? 'bg-black text-white' : 'text-black-700'}`}>
+            <Link className='sidebar-link' href={link.route}>
+              <Image src={link.icon} alt="logo" width={24} height={24} className={`${isActive && 'brightness-200'}`} />
+              {link.label}
+            </Link>
+          </li>
+        );
+      })}
+      <li className="flex-center cursor-pointer gap-2 p-4">
+        <UserButton afterSignOutUrl='/signin' showName />
+      </li>
+    </ul>
+  </SignedIn>
+  <SignedOut>
+    <Button asChild className='button bg-cover bg-black'>
+      <Link href='/sign-in'>Login</Link>
+    </Button>
+  </SignedOut>
+</nav>
 
-                        {link.label}
-                      </Link>
-                  </li>
-                )
-          } )}
-          
-            </ul>
-            <ul className="sidebar-nav_elements">
-            {navLinks.slice(6).map((link)=>{
-                const isActive = link.route ===pathName
-                return(
-                  <li key ={link.label} className={`sidebar-nav_element group 
-                  ${isActive ?'bg-black text-white':'text-black-700'} `}>
-                     <Link className='sidebar-link' href={link.route}>
-                     <Image src={link.icon} alt="logo" 
-                      width={24} height={24} className={`${isActive && 'brightness-200'}`} />
-
-                        {link.label}
-                      </Link>
-                  </li>
-                )
-          } )}
-            <li className="flex-center cursor-pointer gap-2 p-4">
-              <UserButton afterSignOutUrl='/' showName>
-
-              </UserButton>
-             </li>
-          </ul>
-           </SignedIn>
-           <SignedOut>
-              <Button asChild className='button bg-cover bg-black'>
-                <Link href='/sign-in'>Login</Link>
-              </Button>
-           </SignedOut>
-        </nav>
       </div>
     </aside>
   )
