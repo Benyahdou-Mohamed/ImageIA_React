@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const page = () => {
+
+ const Credits= () => {
   return (
     <div>page</div>
   )
 }
+export default Credits;
