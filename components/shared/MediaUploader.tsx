@@ -56,7 +56,7 @@ export const MediaUploader = ( {onValueChange,
                         here is the image to display
                         </>
                     ):(<div>
-                        here is no Images
+                        here is no Images to dispay
                     </div>)}
                 </div>
             )}
